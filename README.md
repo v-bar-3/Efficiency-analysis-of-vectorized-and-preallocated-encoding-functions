@@ -23,29 +23,28 @@ Below are several helpful steps along the way:
 1. https://www.w3schools.com/tags/ref_urlencode.ASP contains a table mapping the UTF-8 percent-encoding to a
 character. Read that table into a named-character vector (or data.frame with two columns.)
 
-3. Create a collection of sample input strings of different sizes containing regular characters and percent-encoded content.
-4. 
-5. Estimate the run-time performance of utils::URLdecode() as a function of the size of the input string. While it takes
+2. Create a collection of sample input strings of different sizes containing regular characters and percent-encoded content.
+  
+3. Estimate the run-time performance of utils::URLdecode() as a function of the size of the input string. While it takes
 a character vector with more zero or more strings, we will focus on a single input string.
 
-7. Modify a copy of the original utils::URLdecode() function to use preallocation of the out variable and insert (rather
+4. Modify a copy of the original utils::URLdecode() function to use preallocation of the out variable and insert (rather
 than concatenate) the values in each iteration into the appropriate elements of out. Ensure that out has the correct
 length when you return the result.
 
-9. Verify that your function gets the correct answer for a variety of inputs. Describe your strategy for devising tests and
+5. Verify that your function gets the correct answer for a variety of inputs. Describe your strategy for devising tests and
 confirming the results are correct.
 
-11. Implement a version of the function that uses a vectorized approach on a single input string (URL) and not a while loop.
+6. Implement a version of the function that uses a vectorized approach on a single input string (URL) and not a while loop.
 The table from the first task should be of some use. As appropriate, break this function into a collection of
 smaller helper functions performing specific subtasks.
 
-13. Describe any bugs you had in your preallocation and vectorized functions and how you found and fixed the problem.
-14. 
-15. Show the run-time curves for all three functions - utils::URLdecode(), the preallocation version and the vectorized
+87 Describe any bugs you had in your preallocation and vectorized functions and how you found and fixed the problem.
+ 
+8. Show the run-time curves for all three functions - utils::URLdecode(), the preallocation version and the vectorized
 version.
-
 • Does one out perform the others?
 
-17. Time the functions on the 591K percent-encoded string from the CalCareers.ca.gov HTTP request available here.
+9. Time the functions on the 591K percent-encoded string from the CalCareers.ca.gov HTTP request available here.
 • How good was your estimate of the run-time for utils::URLdecode()?
 • Which function was fastest?
